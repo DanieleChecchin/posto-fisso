@@ -3,11 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>Posto Fisso</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-<h1 class="text-center mt-5">progetto posto fisso</h1>
+
+<header class="navbar">
+    <div class="container nav">
+        <h1 class="logo">Posto Fisso</h1>
+
+        <nav>
+            <a href="#">Funzionalità</a>
+            <a href="#">Prezzi</a>
+            <a href="#">Supporto</a>
+            <a class="btn-nav" href="#">Scarica App</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-content">
+
+            <article>
+                <h2>Parcheggia in modo intelligente</h2>
+                <p>Trova, paga e prolunga il parcheggio dal tuo telefono.</p>
+
+                <div class="buttons">
+                    <a class="btn-main" href="#">iOS</a>
+                    <a class="btn-outline" href="#">Android</a>
+                </div>
+            </article>
+
+            <figure>
+                <img src="https://images.unsplash.com/photo-1603201667230-bd139210db18" alt="Anteprima app">
+            </figure>
+
+        </div>
+    </section>
+
+    <section class="features container d-flex flex-wrap gap-5 justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PRATICITA':</h5>
+                <p class="card-text">Avvia e termina la tua sosta con un solo tocco sul cellulare.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">CONTINUO AGGIORNAMENTO:</h5>
+                <p class="card-text">Ricevi notifiche in tempo reale quando un parcheggio nella tua area di interesse si libera.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">COMODITA':</h5>
+                <p class="card-text">Paga e all’occorrenza allunga la tua sosta direttamente dall’app senza bisogno del parcometro.</p>
+            </div>
+        </div>
+        <br>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">ESPLORA IL NORD:</h5>
+                <p class="card-text">Posto fisso offre l’opportunità di parcheggiare in 8 regioni differenti e più di 40 città.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <i class="fa-solid fa-house fa-2x"></i>
+                <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PRECISIONE:</h5>
+                <p class="card-text">Attraverso numerosi filtri,posto fisso mette le tue esigenze più specifiche al primo posto.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 ParkEasy</p>
+</footer>
+
 <script src="js/script.js"></script>
 </body>
 </html>
