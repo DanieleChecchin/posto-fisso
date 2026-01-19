@@ -1,29 +1,37 @@
 async function loadComponent(id, file) {
     try {
         const response = await fetch(file);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.text();
-        document.getElementById(id).innerHTML = data;
-        if (id === 'header-placeholder' || id === 'footer-placeholder') {
+        const placeholder = document.getElementById(id);
+        if (!placeholder) return;
+        
+        placeholder.innerHTML = data;
+        
+        // Piccola pausa per assicurarsi che il browser abbia processato l'innerHTML
+        setTimeout(() => {
             if (id === 'header-placeholder') {
                 initSearch();
                 setActiveLink();
                 initRegisterBtn();
+                initCounters();
+                initCostSimulator();
             }
-            initDownloadModal();
-        }
-        if (id === 'modal-placeholder') {
-            initDownloadModal();
-        }
-        if (id === 'register-modal-placeholder') {
-            initRegisterForm();
-        }
-        if (id === 'header-placeholder') {
-            initCounters();
-        }
+            if (id === 'footer-placeholder' || id === 'header-placeholder') {
+                initDownloadModal();
+            }
+            if (id === 'modal-placeholder') {
+                initDownloadModal();
+            }
+            if (id === 'register-modal-placeholder') {
+                initRegisterForm();
+            }
+        }, 10);
     } catch (error) {
         console.error('Error loading component:', error);
     }
 }
+
 
 function initDownloadModal() {
     const downloadButtons = document.querySelectorAll('.btn-download-app');
@@ -246,11 +254,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initRegisterBtn() {
-    const registerBtn = document.getElementById('registerBtn');
-    if (registerBtn) {
-        registerBtn.setAttribute('data-bs-toggle', 'modal');
-        registerBtn.setAttribute('data-bs-target', '#registerModal');
-    }
+    const registerBtns = document.querySelectorAll('#registerBtn');
+    registerBtns.forEach(btn => {
+        btn.setAttribute('data-bs-toggle', 'modal');
+        btn.setAttribute('data-bs-target', '#registerModal');
+    });
 }
 
 function initRegisterForm() {
@@ -319,3 +327,22 @@ function initCounters() {
         observer.observe(counter);
     });
 }
+
+function initCostSimulator() {
+    const range = document.getElementById('durationRange');
+    const durationValue = document.getElementById('durationValue');
+    const estimatedCost = document.getElementById('estimatedCost');
+
+    if (!range || !durationValue || !estimatedCost) return;
+
+    const hourlyRate = 1.50;
+
+    range.addEventListener('input', function() {
+        const hours = parseInt(this.value);
+        durationValue.textContent = hours;
+        
+        const total = (hours * hourlyRate).toFixed(2);
+        estimatedCost.textContent = total;
+    });
+}
+

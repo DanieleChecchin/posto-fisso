@@ -99,6 +99,34 @@
             </div>
         </section>
 
+        <!-- Simulatore di Costo -->
+        <section class="py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="cost-simulator-card p-5 rounded-4 bg-secondary-bg shadow-lg border border-primary border-opacity-25">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-calculator fa-3x text-primary mb-3"></i>
+                            <h2 class="fw-bold">Simulatore di Costo</h2>
+                            <p class="text-white-50">Calcola quanto risparmi con la nostra tariffa flessibile</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="durationRange" class="form-label d-flex justify-content-between">
+                                <span>Durata della sosta:</span>
+                                <span class="fw-bold text-primary"><span id="durationValue">1</span> ora/e</span>
+                            </label>
+                            <input type="range" class="form-range custom-range" id="durationRange" min="1" max="24" value="1">
+                        </div>
+
+                        <div class="result-box p-4 rounded-3 bg-dark bg-opacity-50 text-center">
+                            <p class="mb-1 text-white-50 small text-uppercase fw-bold">Costo stimato</p>
+                            <h3 class="display-5 fw-bold text-primary mb-0">€ <span id="estimatedCost">1.50</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="text-center py-5 mt-5">
             <h2 class="fw-bold mb-4">Sei pronto a semplificare la tua vita?</h2>
             <a href="#" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold btn-download-app shadow-lg">Inizia Ora</a>
