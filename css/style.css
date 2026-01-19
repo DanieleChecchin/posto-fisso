@@ -244,6 +244,12 @@ font-size:16px;
     border-color: #0D6EFD;
 }
 
+.footer-modern .form-control::placeholder,
+.form-control.bg-dark::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1;
+}
+
 @media(max-width:900px){
     .hero-content{ flex-direction: column; text-align:center; gap: 40px; }
     .hero h2 { font-size: 2.5rem; }
