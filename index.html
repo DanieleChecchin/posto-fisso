@@ -5,8 +5,7 @@
     <title>Posto Fisso</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -15,12 +14,15 @@
 <header class="navbar">
     <div class="container nav">
         <h1 class="logo">Posto Fisso</h1>
-
         <nav>
-            <a href="#">Funzionalità</a>
-            <a href="#">Prezzi</a>
+            <a href="#">Guida</a>
             <a href="#">Supporto</a>
-            <a class="btn-nav" href="#">Scarica App</a>
+            <div class="lang-selector">
+                <img src="https://flagcdn.com/w20/it.png" alt="Italiano">
+                <span class="fw-bold">Italiano</span>
+                <i class="fas fa-chevron-down ms-1"></i>
+            </div>
+            <a class="btn-nav btn btn-primary" href="#">Scarica App</a>
         </nav>
     </div>
 </header>
@@ -34,7 +36,7 @@
                 <p>Trova, paga e prolunga il parcheggio dal tuo telefono.</p>
 
                 <div class="buttons">
-                    <a class="btn-main" href="#">iOS</a>
+                    <a class="btn-main btn btn-primary" href="#">iOS</a>
                     <a class="btn-outline" href="#">Android</a>
                 </div>
             </article>
@@ -46,37 +48,38 @@
         </div>
     </section>
 
-    <section class="features container d-flex flex-wrap gap-5 justify-content-center">
-        <div class="card" style="width: 18rem;">
+    <div class="container">
+
+    <section class="features container grid">
+        <div class="card">
             <div class="card-body">
                 <i class="fa-solid fa-house fa-2x"></i>
                 <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PRATICITA':</h5>
                 <p class="card-text">Avvia e termina la tua sosta con un solo tocco sul cellulare.</p>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <i class="fa-solid fa-house fa-2x"></i>
                 <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">CONTINUO AGGIORNAMENTO:</h5>
                 <p class="card-text">Ricevi notifiche in tempo reale quando un parcheggio nella tua area di interesse si libera.</p>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <i class="fa-solid fa-house fa-2x"></i>
                 <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">COMODITA':</h5>
                 <p class="card-text">Paga e all’occorrenza allunga la tua sosta direttamente dall’app senza bisogno del parcometro.</p>
             </div>
         </div>
-        <br>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <i class="fa-solid fa-house fa-2x"></i>
                 <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">ESPLORA IL NORD:</h5>
                 <p class="card-text">Posto fisso offre l’opportunità di parcheggiare in 8 regioni differenti e più di 40 città.</p>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <i class="fa-solid fa-house fa-2x"></i>
                 <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PRECISIONE:</h5>
@@ -85,12 +88,174 @@
         </div>
     </section>
 
+    <!-- Content -->
+        <div class="content d-flex">
+            <img src="/img/parcheggio.jpg" class="shadow-lg rounded-4" alt="Parcheggio">
+            <div>
+                <h1 class="fw-bold">PARCHEGGIA E PAGA IN MODO SEMPLICE E COMODO</h1>
+                <p>Trovare parcheggio nelle zone più frequentate può diventare complicato, soprattutto negli orari di punta. È proprio da questa esigenza che nasce POSTO FISSO, l’app pensata per semplificare la ricerca e la gestione del parcheggio in tutto il Nord Italia. Con POSTO FISSO puoi individuare facilmente l’area in cui ti trovi, scegliere il parcheggio più adatto alle tue esigenze e pagare direttamente dall’app, con la possibilità di prolungare la sosta in qualsiasi momento.Con POSTO FISSO hai accesso a informazioni aggiornate in tempo reale su disponibilità e prezzi. Grazie ai filtri avanzati puoi rendere la ricerca ancora più precisa: selezionare un’area di interesse, ordinare i parcheggi dal più economico al più costoso, scegliere strutture al coperto, sorvegliate, con accesso facilitato o dotate di colonnine di ricarica elettrica. Inoltre, ricevi notifiche automatiche quando un parcheggio che hai salvato tra i preferiti si libera, evitando giri inutili e perdite di tempo.In un panorama urbano in continua evoluzione, dove ottimizzare tempo e spostamenti è fondamentale, POSTO FISSO si propone come un alleato concreto per chi guida. L’app nasce per offrire un’esperienza di parcheggio più intelligente, personalizzata e trasparente, adattandosi alle diverse esigenze degli utenti. Che si tratti di lavoro, tempo libero o commissioni quotidiane, POSTO FISSO ti aiuta a pianificare meglio i tuoi spostamenti, riducendo lo stress e rendendo il parcheggio una parte semplice e integrata del tuo viaggio.
+                </p>
+            </div>
+        </div>
+        <!-- Content 2-->
+
+        <div class="content d-flex space">
+            <div>
+                <h1 class="fw-bold">SCARICA L’APP</h1>
+                <p>Se anche tu vuoi viaggiare senza preoccuparti del parcheggio cosa aspetti, scarica POSTO FISSO.</p>
+
+                <ul class="download">
+                    <li>Disponibile su tutti i dispositivi</li>
+                    <li class="my-3">Completamente gratuita</li>
+                    <li>95% delle recensioni positive</li>
+                </ul>
+
+                <button class="btn btn-primary mt-5">Scarica l'app</button>
+                <button class="btn btn-primary mt-5 ms-5">Come funziona</button>
+            </div>
+            <img src="/img/parcheggio.jpg" class="shadow-lg rounded-4 img-space" alt="Parcheggio">
+        </div>
+
+        <h1 class="fw-bold space">PARCHEGGIA IN TRE SEMPLICI PASSAGGI</h1>
+
+        <section class="features container grid">
+
+        <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">INDIVIDUA LA ZONA DI PARCHEGGIO:</h5>
+                    <p class="card-text">Niente più biglietti cartacei o colonnine. Apri POSTOFISSO e lascia che l’app rilevi automaticamente la tua posizione, oppure cerca manualmente l’area di interesse tramite mappa o codice. Verifica di aver selezionato la zona corretta e visualizza subito i parcheggi disponibili nei dintorni.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">SELEZIONA E AVVIA LA SOSTA:</h5>
+                    <p class="card-text">Scegli il parcheggio più adatto alle tue esigenze utilizzando i filtri (prezzo, coperto, sorvegliato e altro). Controlla che la targa inserita sia corretta, imposta la durata della sosta direttamente dall’app e conferma con un tocco. Da quel momento il tuo parcheggio è attivo e sempre sotto controllo
+                        .</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">ALLUNGA O DIMINUISCI LA SOSTA:</h5>
+                    <p class="card-text"> Imprevisti? Attraverso la voce modifica cambia l’orario iniziale in base alle tue esigenze.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="prenota mb-5 d-flex justify-content-between">
+            <div>
+            <h3 class="fw-bold text-white">PRENOTA IL TUO PARCHEGGIO</h3>
+            <p class="text-white layout">Ci sono appuntamenti che non possono aspettare. Blocca in anticipo un posto per la tua auto e muoviti serenamente, sapendo di essere sempre puntuale per un viaggio, un concerto o un impegno lavorativo. Con Posto Fisso puoi prenotare il parcheggio in anticipo in numerose città e località del Nord Italia.
+            </p>
+                <button class="btn btn-primary mt-5">Scarica l'app</button>
+                <button class="btn btn-primary mt-5 ms-5">Come funziona</button>
+            </div>
+            <img src="/img/clock.png" class="shadow-lg rounded-4" alt="Clock">
+        </div>
+
+        <h1 class="fw-bold">UNITI PER DELLE CITTA’ MENO CAOTICHE</h1>
+        <p>Conosci già la nostra app per il parcheggio, ma forse non sai che lavoriamo anche per rendere la mobilità urbana più efficiente. Miglioriamo la gestione dei parcheggi e la circolazione nelle città collaborando con enti locali, decisori pubblici, operatori di sosta privati, partner tecnologici e cittadini, come tu che stai leggendo. Insieme contribuiamo a creare città più ordinate, sostenibili e meno caotiche.</p>
+
+        <section class="features container grid">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">INCONTRO ALLE TUE ESIGENZE:</h5>
+                    <p class="card-text">Parcheggia senza pensieri e scegli la sicurezza che meriti.
+                        Accedi a parcheggi sorvegliati e controllati per la massima tranquillità.
+                        Molte strutture sono dotate di videosorveglianza attiva 24 ore su 24.
+                        Trova facilmente parcheggi con accessi protetti e servizi dedicati.
+                        Sono disponibili posti riservati ai disabili, comodi e facilmente raggiungibili.
+                        Con pochi clic scegli il parcheggio perfetto e parti sereno.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">VEICOLI ELETTRICI:</h5>
+                    <p class="card-text">Individua facilmente il punto di ricarica più vicino grazie all’app posto fisso e, una volta arrivato, gestisci tutto dallo smartphone: avvia la ricarica della tua auto elettrica e attiva il parcheggio in pochi istanti.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PAGAMENTO SMART:</h5>
+                    <p class="card-text">Con l’app “posto fisso” non hai bisogno di cercare la colonnina di pagamento, bensì puoi pagare direttamente dal tuo smartphone, risparmiando ulteriore tempo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                    <h5 class="card-subtitle mb-2 fw-bold fst-italic my-4">PAGAMENTO AL MINUTO:</h5>
+                    <p class="card-text">Torni in anticipo? Con un tocco blocchi la sosta.
+                        Hai avuto qualche imprevisto o vuoi goderti ancora di più la giornata? Modifica l’orario di sosta e ti basterà confermare il tutto con un click.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
 </main>
 
-<footer>
-    <p>© 2026 ParkEasy</p>
+<footer class="footer-modern py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h1 class="logo mb-4">Posto Fisso</h1>
+                <p class="text-white-50">Semplifichiamo la sosta urbana nel Nord Italia con soluzioni intelligenti e pagamenti digitali. Parcheggia senza stress, ovunque tu sia.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4">
+                <h5 class="fw-bold text-white mb-4">Link Rapidi</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Funzionalità</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Guida</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Supporto</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold text-white mb-4">Contatti</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Milano, Italia</li>
+                    <li class="mb-2"><i class="fas fa-phone me-2"></i> +39 02 123 4567</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@postofisso.it</li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5 class="fw-bold text-white mb-4">Newsletter</h5>
+                <p class="text-white-50 mb-3">Iscriviti per ricevere aggiornamenti sulle nuove città disponibili.</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-transparent text-white border-secondary" placeholder="La tua email" aria-label="Email">
+                    <button class="btn btn-primary" type="button">Invia</button>
+                </div>
+            </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="text-white-50 mb-0">© 2026 Posto Fisso - Tutti i diritti riservati.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0 d-flex flex-column align-items-end">
+                <div class="footer-download">
+                    <img src="" alt="" class="mb-2 d-block mx-auto">
+                    <button class="btn btn-primary">Scarica l'app</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

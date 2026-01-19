@@ -1,17 +1,59 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
 
-.container{width:90%;max-width:1200px;margin:auto}
+.container{width:90%;max-width:1400px;margin:auto}
 
-.navbar{background:linear-gradient(120deg,#0a1b2b,#808080);padding:15px 0}
+.navbar{background:linear-gradient(120deg,#0a1b2b,#808080);padding:15px 0; position: sticky; top: 0; right: 0; z-index: 1}
 
-h1{
+.nav h1{
     color:white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fugaz One', sans-serif;
+}
+img{display:block;}
+
+.content img{
+    width:685px;
+    height:525px;
+    border-radius:10px;
+}
+
+.navbar .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+a{
+    font-weight: bold;
 }
 
 nav a{color:white;margin-left:20px;text-decoration:none}
 
-.btn-nav{background:#00b4ff;padding:8px 14px;border-radius:6px}
+.lang-selector {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.lang-selector img {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.lang-selector i {
+    font-size: 0.8rem;
+}
+
+.btn-nav{padding:8px 14px;border-radius:6px}
 
 .hero{background:linear-gradient(120deg,#0a1b2b,#003b5c);color:white;padding:80px 0}
 
@@ -27,23 +69,110 @@ font-size:16px;
 
 .buttons a{margin-right:15px}
 
-.btn-main{background:#00b4ff;color:white;padding:14px 24px;border-radius:10px;text-decoration:none}
+.btn-main{color:white;padding:14px 24px;border-radius:10px;text-decoration:none}
 
-.btn-outline{border:2px solid #00b4ff;color:#00b4ff;padding:14px 24px;border-radius:10px;text-decoration:none}
+.btn-outline{border:2px solid #0D6EFD;color:#0D6EFD;padding:14px 24px;border-radius:10px;text-decoration:none}
 
 .features{padding:80px 0;}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
 
-.card{background:linear-gradient(120deg,#0a1b2b,#808080) !important;color:white !important;padding:32px;text-align:center;border-radius:20px;font-size:1.2rem;box-shadow:0 10px 20px rgba(0,0,0,.05)}
+.card{flex: 0 1 calc(33.333% - 20px);background:linear-gradient(120deg,#0a1b2b,#808080) !important;color:white !important;padding:32px;text-align:center;border-radius:20px;font-size:1.2rem;box-shadow:0 10px 20px rgba(0,0,0,.05);min-width: 250px;}
 
 .card i{color:white}
 
 .cta{text-align:center;padding:80px 20px;background:#00b4ff;color:white}
 
-footer{text-align:center;padding:25px;background:#0a1b2b;color:white}
+.footer-modern {
+    background: linear-gradient(120deg, #0a1b2b, #1a2a3a);
+    color: white;
+}
+
+.footer-modern .logo {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.footer-modern a {
+    transition: color 0.3s ease;
+}
+
+.footer-modern a:hover {
+    color: #0D6EFD !important;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #0D6EFD;
+    transform: translateY(-3px);
+}
+
+.footer-modern .form-control:focus {
+    box-shadow: none;
+    border-color: #0D6EFD;
+}
 
 @media(max-width:900px){
-    .hero-content,.grid{grid-template-columns:1fr;text-align:center}
+    .hero-content{grid-template-columns:1fr;text-align:center}
+    .grid{flex-direction: column; align-items: center;}
+    .card{flex: 1 1 100%; width: 100%;}
+}
+.content h1{
+    padding-left: 30px;
+}
+
+.content p{
+    padding-left: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.space{
+    margin-top: 120px;
+}
+
+.img-space{
+    margin-left: 200px;
+}
+
+.download li{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.prenota{
+    background:linear-gradient(120deg,#0a1b2b,#808080);
+    padding: 90px;
+    border-radius: 40px;
+}
+
+.layout{
+    max-width: 600px;
+}
+
+.prenota p{
+    line-height: 47px;
+}
+
+.footer-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-download img {
+    max-width: 50px;
+    height: auto;
 }
 
