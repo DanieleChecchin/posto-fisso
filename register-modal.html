@@ -1,0 +1,46 @@
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-secondary-bg border-0 rounded-4 overflow-hidden shadow-lg">
+            <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <div id="registerFormContainer">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                        <h2 class="fw-bold text-white" id="registerModalLabel">Crea il tuo account</h2>
+                        <p class="text-white-50">Unisciti a Posto Fisso e parcheggia senza pensieri.</p>
+                    </div>
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label class="form-label text-white-50 small">Nome Completo</label>
+                            <input type="text" class="form-control bg-dark text-white border-secondary rounded-3" placeholder="Mario Rossi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white-50 small">Indirizzo Email</label>
+                            <input type="email" class="form-control bg-dark text-white border-secondary rounded-3" placeholder="mario.rossi@esempio.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white-50 small">Numero di Targa</label>
+                            <input type="text" class="form-control bg-dark text-white border-secondary rounded-3" placeholder="AA123BB" required style="text-transform: uppercase;">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-white-50 small">Password</label>
+                            <input type="password" class="form-control bg-dark text-white border-secondary rounded-3" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3">Registrati ora</button>
+                    </form>
+                </div>
+                
+                <div id="registerSuccess" class="text-center py-4" style="display: none;">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle fa-5x text-success animate__animated animate__bounceIn"></i>
+                    </div>
+                    <h3 class="fw-bold text-white mb-3">Registrazione completata!</h3>
+                    <p class="text-white-50 mb-4">Grazie per esserti registrato. Ora puoi accedere a tutti i servizi di Posto Fisso.</p>
+                    <button type="button" class="btn btn-outline-primary px-5 py-2 fw-bold rounded-3" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

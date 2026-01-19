@@ -82,6 +82,18 @@ nav a.nav-link-custom:hover {
 
 .btn-nav{padding:8px 14px;border-radius:6px}
 
+.login-link {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-link:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: var(--primary-color);
+}
+
 .hero{
     background: radial-gradient(circle at top right, #1a2a3a, #0a1b2b);
     color: white;
@@ -306,6 +318,126 @@ font-size:16px;
     opacity: 1 !important;
 }
 
+/* Search Styles */
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: var(--transition-base);
+}
+
+.search-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-color) !important;
+}
+
+.search-bar-wrapper {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--secondary-bg);
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    align-items: center;
+    gap: 10px;
+    min-width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1001;
+    animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-10px) translateX(50%); }
+    to { opacity: 1; transform: translateY(0) translateX(50%); }
+}
+
+.search-bar-wrapper input {
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: none !important;
+    padding: 5px 0;
+    font-size: 0.9rem;
+}
+
+.search-results-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+}
+
+.search-results-nav span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Modal Styles */
+.modal-content {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.qr-container img {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.qr-container:hover img {
+    transform: scale(1.05);
+}
+
+.reminder-box {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#downloadModal .btn-dark {
+    transition: var(--transition-base);
+}
+
+#downloadModal .btn-dark:hover {
+    background: #1a1a1a !important;
+    border-color: var(--primary-color) !important;
+}
+
+#downloadModal .btn-close-white {
+    filter: invert(1) grayscale(1) brightness(2);
+}
+
+.search-results-nav button {
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-results-nav button:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.highlight {
+    background-color: #ffeb3b !important;
+    color: black !important;
+    padding: 2px 0;
+    border-radius: 2px;
+}
+
+.highlight.current {
+    background-color: #ff9800 !important;
+    outline: 2px solid #000;
+}
+
 .download {
     list-style: none;
     padding: 0;
@@ -376,3 +508,48 @@ font-size:16px;
     animation: fadeIn 1s ease-out;
 }
 
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-color);
+}
+
+.animate__bounceIn {
+    animation: bounceIn 0.8s;
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+    20% { transform: scale3d(1.1, 1.1, 1.1); }
+    40% { transform: scale3d(0.9, 0.9, 0.9); }
+    60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
+    80% { transform: scale3d(0.97, 0.97, 0.97); }
+    to { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+/* Counter and Comparison Styles */
+.counter-card {
+    transition: var(--transition-base);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.counter-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.comparison-wrapper {
+    background: #0a1b2b;
+}
+
+.comparison-list li {
+    font-size: 1.1rem;
+}
+
+.badge {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
