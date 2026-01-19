@@ -291,6 +291,15 @@ font-size:16px;
     margin-top: 150px;
 }
 
+.bg-secondary-bg {
+    background: var(--secondary-bg);
+}
+
+.nav-link-custom.active {
+    color: var(--primary-color) !important;
+    opacity: 1 !important;
+}
+
 .download {
     list-style: none;
     padding: 0;
@@ -305,7 +314,6 @@ font-size:16px;
 
 .download li::before {
     content: "\f00c";
-    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: #28a745;
     margin-right: 15px;
