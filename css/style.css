@@ -44,8 +44,8 @@ nav {
 }
 
 .logo-nav{
-    width: 120px;
-    height: 100px;
+    width: 170px;
+    height: 130px;
 }
 
 a{
@@ -612,4 +612,13 @@ font-size:16px;
     border-radius: 50px;
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+.transition-hover {
+    transition: var(--transition-base);
+}
+
+.transition-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
