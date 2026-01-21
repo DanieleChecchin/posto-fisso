@@ -48,6 +48,11 @@ nav {
     height: 130px;
 }
 
+.logo-foot{
+    width: 300px;
+    height: 200px;
+}
+
 a{
     font-weight: bold;
 }
@@ -107,6 +112,74 @@ nav a.nav-link-custom:hover {
 .login-link:hover {
     background: rgba(255, 255, 255, 0.2) !important;
     border-color: var(--primary-color);
+}
+
+.user-logged {
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.1rem;
+    color: var(--primary-color) !important;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+#passwordFeedback ul li {
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+#passwordFeedback ul li i {
+    width: 16px;
+}
+
+#passwordFeedback .text-success {
+    color: #28a745 !important;
+}
+
+#passwordFeedback .text-danger {
+    color: #dc3545 !important;
+    opacity: 0.8;
+}
+
+/* Password Strength Colors */
+.strength-low {
+    background-color: #dc3545 !important;
+    width: 33.33%;
+}
+
+.strength-medium {
+    background-color: #ffc107 !important;
+    width: 66.66%;
+}
+
+.strength-high {
+    background-color: #28a745 !important;
+    width: 100%;
+}
+
+.text-strength-low { color: #dc3545 !important; }
+.text-strength-medium { color: #ffc107 !important; }
+.text-strength-high { color: #28a745 !important; }
+
+#togglePassword {
+    border: none;
+    background: transparent;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+#togglePassword:hover {
+    color: var(--primary-color) !important;
+}
+
+#togglePassword:focus {
+    box-shadow: none;
 }
 
 .hero{
@@ -621,4 +694,26 @@ font-size:16px;
 .transition-hover:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Accordion FAQ Custom Style */
+.custom-accordion .accordion-item {
+    margin-bottom: 10px;
+    border-radius: 12px !important;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.custom-accordion .accordion-button {
+    padding: 1.25rem;
+    box-shadow: none !important;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.1) !important;
+    color: var(--primary-color) !important;
+}
+
+.custom-accordion .accordion-button::after {
+    filter: invert(1);
 }

@@ -266,13 +266,139 @@ function initRegisterForm() {
     const registerFormContainer = document.getElementById('registerFormContainer');
     const registerSuccess = document.getElementById('registerSuccess');
     const registerModal = document.getElementById('registerModal');
+    const regFullNameInput = document.getElementById('regFullName');
+    const regPasswordInput = document.getElementById('regPassword');
+    const registerBtn = document.getElementById('registerBtn');
+
+    // Controlla se l'utente è già "loggato" (simulazione)
+    const savedUser = localStorage.getItem('user_name');
+    if (savedUser && registerBtn) {
+        updateHeaderWithUser(savedUser);
+    }
+
+    if (regPasswordInput) {
+        const feedback = document.getElementById('passwordFeedback');
+        const strengthWrapper = document.getElementById('passwordStrengthWrapper');
+        const strengthBar = document.getElementById('passwordStrengthBar');
+        const strengthText = document.getElementById('passwordStrengthText');
+        const togglePassword = document.getElementById('togglePassword');
+        
+        if (togglePassword) {
+            togglePassword.addEventListener('click', function() {
+                const type = regPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                regPasswordInput.setAttribute('type', type);
+                
+                // Toggle icon
+                const icon = this.querySelector('i');
+                if (type === 'text') {
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            });
+        }
+        
+        const requirements = {
+            length: document.getElementById('pw-length'),
+            upper: document.getElementById('pw-upper'),
+            lower: document.getElementById('pw-lower'),
+            number: document.getElementById('pw-number'),
+            special: document.getElementById('pw-special')
+        };
+
+        regPasswordInput.addEventListener('focus', () => {
+            feedback.style.display = 'block';
+            strengthWrapper.style.display = 'block';
+        });
+
+        regPasswordInput.addEventListener('input', () => {
+            const val = regPasswordInput.value;
+            
+            const checks = {
+                length: val.length >= 8,
+                upper: /[A-Z]/.test(val),
+                lower: /[a-z]/.test(val),
+                number: /[0-9]/.test(val),
+                special: /[? ! @ # $ % & *]/.test(val)
+            };
+
+            let passedCount = 0;
+            Object.keys(checks).forEach(key => {
+                const isValid = checks[key];
+                const el = requirements[key];
+                if (isValid) {
+                    passedCount++;
+                    el.classList.replace('text-danger', 'text-success');
+                    el.querySelector('i').classList.replace('fa-times-circle', 'fa-check-circle');
+                } else {
+                    el.classList.replace('text-success', 'text-danger');
+                    el.querySelector('i').classList.replace('fa-check-circle', 'fa-times-circle');
+                }
+            });
+
+            // Update Strength Indicator
+            updateStrengthMeter(passedCount, val.length);
+        });
+
+        function updateStrengthMeter(passedCount, length) {
+            if (length === 0) {
+                strengthBar.style.width = '0%';
+                strengthBar.className = 'progress-bar';
+                strengthText.textContent = '-';
+                strengthText.className = 'fw-bold';
+                return;
+            }
+
+            let strength = 'Basso';
+            let strengthClass = 'strength-low';
+            let textClass = 'text-strength-low';
+
+            if (passedCount >= 5) {
+                strength = 'Alto';
+                strengthClass = 'strength-high';
+                textClass = 'text-strength-high';
+            } else if (passedCount >= 3) {
+                strength = 'Medio';
+                strengthClass = 'strength-medium';
+                textClass = 'text-strength-medium';
+            }
+
+            strengthBar.className = 'progress-bar ' + strengthClass;
+            strengthText.textContent = strength;
+            strengthText.className = 'fw-bold ' + textClass;
+        }
+    }
 
     if (registerForm) {
         registerForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Validazione finale password
+            const val = regPasswordInput ? regPasswordInput.value : '';
+            const isPasswordValid = val.length >= 8 && 
+                                  /[A-Z]/.test(val) && 
+                                  /[a-z]/.test(val) && 
+                                  /[0-9]/.test(val) && 
+                                  /[? ! @ # $ % & *]/.test(val);
+
+            if (!isPasswordValid) {
+                alert('La password non soddisfa tutti i requisiti.');
+                return;
+            }
+            
+            const fullName = regFullNameInput ? regFullNameInput.value : 'Utente';
+            
+            // Salva nel localStorage per simulare la persistenza
+            localStorage.setItem('user_name', fullName);
+            
+            // Aggiorna l'header
+            updateHeaderWithUser(fullName);
+
             // Simulazione invio form
             registerFormContainer.style.display = 'none';
             registerSuccess.style.display = 'block';
+
+            // Reset del form dopo un po' se si chiude la modale (gestito da hidden.bs.modal)
         });
     }
 
@@ -283,8 +409,69 @@ function initRegisterForm() {
                 registerForm.reset();
                 registerFormContainer.style.display = 'block';
                 registerSuccess.style.display = 'none';
+                
+                // Reset della forza password
+                const strengthBar = document.getElementById('passwordStrengthBar');
+                const strengthText = document.getElementById('passwordStrengthText');
+                const strengthWrapper = document.getElementById('passwordStrengthWrapper');
+                const feedback = document.getElementById('passwordFeedback');
+                
+                if (strengthBar) {
+                    strengthBar.style.width = '0%';
+                    strengthBar.className = 'progress-bar';
+                }
+                if (strengthText) {
+                    strengthText.textContent = '-';
+                    strengthText.className = 'fw-bold';
+                }
+                if (strengthWrapper) strengthWrapper.style.display = 'none';
+                if (feedback) feedback.style.display = 'none';
+
+                // Reset delle classi dei requisiti
+                const requirements = ['pw-length', 'pw-upper', 'pw-lower', 'pw-number', 'pw-special'];
+                requirements.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.classList.replace('text-success', 'text-danger');
+                        const icon = el.querySelector('i');
+                        if (icon) icon.classList.replace('fa-check-circle', 'fa-times-circle');
+                    }
+                });
             }
         });
+    }
+
+    const logoutBtn = document.createElement('a');
+    logoutBtn.href = "javascript:void(0)";
+    logoutBtn.className = "text-white-50 small ms-2 text-decoration-none";
+    logoutBtn.id = "logoutBtn";
+    logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i>';
+    logoutBtn.style.display = savedUser ? 'inline-block' : 'none';
+    logoutBtn.title = "Esci";
+
+    if (registerBtn && !document.getElementById('logoutBtn')) {
+        registerBtn.parentNode.appendChild(logoutBtn);
+    }
+
+    logoutBtn.addEventListener('click', function() {
+        localStorage.removeItem('user_name');
+        location.reload(); // Semplice reset della simulazione
+    });
+}
+
+function updateHeaderWithUser(name) {
+    const registerBtn = document.getElementById('registerBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (registerBtn) {
+        registerBtn.innerHTML = `<i class="fas fa-user-circle me-2 text-white"></i>${name}`;
+        registerBtn.classList.remove('login-link');
+        registerBtn.classList.add('user-logged');
+        registerBtn.removeAttribute('data-bs-toggle');
+        registerBtn.removeAttribute('data-bs-target');
+        registerBtn.href = "#";
+    }
+    if (logoutBtn) {
+        logoutBtn.style.display = 'inline-block';
     }
 }
 
