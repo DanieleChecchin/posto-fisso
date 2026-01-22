@@ -215,6 +215,10 @@ nav a.nav-link-custom:hover {
     transform: scale(1.02);
 }
 
+.data-icon{
+font-size: 270px;
+}
+
 h2{
     font-size: 3.5rem;
     font-weight: 700;
@@ -559,14 +563,14 @@ font-size:16px;
 }
 
 .highlight {
-    background-color: #ffeb3b !important;
+    background-color: lightskyblue !important;
     color: black !important;
     padding: 2px 0;
     border-radius: 2px;
 }
 
 .highlight.current {
-    background-color: #ff9800 !important;
+    background-color: lightskyblue !important;
     outline: 2px solid #000;
 }
 
